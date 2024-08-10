@@ -7,14 +7,14 @@ const Card = ({item}) => {
     console.log(item);
   return (
     <>
+    <div className='h-25 w-15'>
     <div >
-    <div >
-  <figure><img src={item.image} alt="images" /></figure>
+  <figure><img src={item.image} alt="images"  className='h-25 w-15'/></figure>
   <div className="card-body">
     <h2 className="card-title">{item.title}</h2>
     <p>{item.subtitle}</p>
     <div className="card-actions justify-end">
-      <button className="btn btn-primary">{item.category}</button>
+      <button className="btn btn-primary hover:bg-pink ">{item.category}</button>
     </div>
   </div>
 </div>
