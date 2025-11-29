@@ -4,30 +4,30 @@ const bookSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true, // book title
+      required: true, 
     },
     subtitle: {
       type: String,
-      required: true, // short description
+      required: true, 
     },
     category: {
       type: String,
-      required: true, // e.g., Fiction, Education
+      required: true, 
     },
     image: {
-      type: String, // book cover image URL/path
+      type: String, 
       default: "",
     },
     pdfLink: {
-      type: String, // file URL or filename
+      type: String, 
       required: true,
     },
     isFree: {
-      type: Boolean, // true = free, false = paid
+      type: Boolean, 
       default: true,
     },
   },
-  { timestamps: true } // auto add createdAt, updatedAt
+  { timestamps: true } 
 );
 
 const Book = mongoose.model("Book", bookSchema);

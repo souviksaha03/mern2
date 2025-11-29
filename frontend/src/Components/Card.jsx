@@ -2,22 +2,17 @@ import React from "react";
 
 const Card = ({ item }) => {
   
-  // 🟢 CRITICAL FIX: Guard Clause
-  // This prevents the application from crashing if 'item' is null or undefined
   if (!item) {
     console.warn("Card skipped rendering: 'item' prop is missing.");
     return null; 
   }
 
   const handleDownload = () => {
-    // 🟢 FIX: Ensure this uses '_id' (common Mongoose/MongoDB ID format)
+    
     window.location.href = `http://localhost:4001/book/download/${item._id}`;
   };
 
-  // const handleBuy = () => {
-  //   alert("This is a paid book. Redirecting to payment..."); 
-  //   // 🔹 Later: integrate payment logic (Stripe, Razorpay, etc.)
-  // };
+ 
   const handleBuy = () => {
   alert("This is a paid book. Redirecting to payment...");
   window.location.href = "/payment"; 

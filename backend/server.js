@@ -25,7 +25,6 @@ try{
 }catch(error){
     console.log("Error:" , error) ;
 }
-//defining routes
 app.use("/book",bookRoute)
 app.use("/user", UserRoute);
 app.listen(PORT,()=>{

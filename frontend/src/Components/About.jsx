@@ -7,9 +7,9 @@ const About = () => {
     <>
     <Navbar/>
     <div className="h-screen flex flex-col items-center justify-center bg-red-50 px-4">
-      {/* Content Wrapper: Inner Div + Image */}
+      
       <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-        {/* Text Box */}
+      
         <div className="bg-red-700 w-full md:w-1/2 p-6 text-white rounded-lg shadow-lg text-center flex items-center justify-center">
           <p>
             Hi, I’m <strong>Souvik Saha</strong>, a 4th-year Computer Science and Engineering student from Bengal Institute Of Technology under MAKAUT.  
@@ -33,7 +33,7 @@ const About = () => {
         />
       </div>
 
-      {/* Button Below Inner Div & Image */}
+    
       <div className="mt-6">
        <Link to='/'><button className="btn btn-warning" >Back to home</button></Link>  
       </div>

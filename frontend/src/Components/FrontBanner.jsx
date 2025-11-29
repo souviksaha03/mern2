@@ -53,4 +53,3 @@ const FrontBanner = () => {
 }
 
 export default FrontBanner
-//54:29

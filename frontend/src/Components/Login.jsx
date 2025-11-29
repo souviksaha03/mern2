@@ -18,10 +18,9 @@ const Login = () => {
     try {
       const res = await axios.post("http://localhost:4001/user/signin", data);
 
-      // save token in localStorage
+      
       localStorage.setItem("token", res.data.token);
 
-      // redirect to course content (or homepage)
       navigate("/");
     } catch (err) {
       console.error(err);

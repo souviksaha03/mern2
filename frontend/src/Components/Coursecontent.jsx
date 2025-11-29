@@ -10,10 +10,10 @@ const Coursecontent = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        // const response = await axios.get('http://localhost:4001/courses');
+    
         const response = await axios.get('http://localhost:4001/book');
 
-        // Safely extract the course array, handling potential nesting (response.data.data)
+        
         const courseData = Array.isArray(response.data) 
                             ? response.data 
                             : response.data.data;
@@ -27,7 +27,7 @@ const Coursecontent = () => {
         
         setLoading(false);
       } catch (err) {
-        // Log the network/CORS error for debugging
+        
         console.error("Failed to fetch courses:", err.message);
         setError(`Failed to load courses. Is the backend running on port 4001? Error: ${err.message}`);
         setLoading(false);
@@ -36,7 +36,6 @@ const Coursecontent = () => {
     fetchCourses();
   }, []);
 
-  // --- Conditional Rendering ---
   
   if (loading) {
     return <div className="text-center mt-10 text-xl font-semibold">Loading courses...</div>;
@@ -54,17 +53,17 @@ const Coursecontent = () => {
     );
   }
 
-  // --- Final Render ---
+  
   
   return (
     <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {courses.length > 0 ? (
         
-        // 🟢 CRITICAL FIX: Filter out null/undefined elements before mapping
+        
         courses
-          .filter(item => item) // Ensures only valid objects are passed to Card
+          .filter(item => item) 
           .map((item) => (
-            // The item is now guaranteed to exist here
+            
             <Card key={item._id} item={item} />
           ))
       ) : (
